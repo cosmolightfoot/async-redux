@@ -3,13 +3,13 @@ import {
   applyMiddleware, 
   compose
 } from 'redux';
-import thunk from 'redux-thunk';
+import { promiseMiddleware } from 'promise-middleware-redux';
 import reducer from './reducers/index';
 
 export default createStore(
   reducer,
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(promiseMiddleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
