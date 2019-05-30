@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Character from './Character';
 
 function Characters({ characters }) {
+  console.log(characters);
   const charactersList = characters.map(character => (
     <li key={character.id}>
       <Character character={character} />
@@ -17,11 +18,7 @@ function Characters({ characters }) {
 }
 
 Characters.propTypes = {
-  characters: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired,
-    name: PropTypes.name.isRequired
-  })).isRequired
+  characters: PropTypes.array.isRequired
 };
 
 export default Characters;
