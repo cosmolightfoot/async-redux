@@ -1,12 +1,15 @@
-import { createStore } from 'redux';
-
-const reducer = (state, action) => {
-  switch(action.type) {
-    default:
-      return state;
-  }
-};
+import {
+  createStore,
+  applyMiddleware, 
+  compose
+} from 'redux';
+import thunk from 'redux-thunk';
+import reducer from './reducers/index';
 
 export default createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
