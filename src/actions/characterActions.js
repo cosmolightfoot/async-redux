@@ -12,7 +12,7 @@ export const fetchCharacters = () => dispatch => {
   return getCharacters()
     .then(characters => {
       dispatch({
-        type: FETCH_CHARACTERS_ERROR,
+        type: FETCH_CHARACTERS,
         payload: characters
       });
     })
