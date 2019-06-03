@@ -10,7 +10,7 @@ const initialState = {
 export default function characterReducer(state = initialState, action) {
   switch(action.type) {
     case FETCH_CHARACTERS_LOADING:
-      return { ...state, loading: true }
+      return { ...state, loading: true };
       
     case FETCH_CHARACTERS_ERROR: 
       return { ...state, loading: false, error: action.payload };

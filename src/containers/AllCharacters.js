@@ -18,6 +18,7 @@ class AllCharacters extends PureComponent {
   };
 
   componentDidMount() {
+    console.log('LOG');
     this.props.fetch();
   }
 
